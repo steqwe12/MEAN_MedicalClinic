@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaša Aplikacija</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}!</h2>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+        <br><br><br>
+        <h3>Promena lozinke:</h3>
+        <p>Unesi staru lozinku:</p>
+        <input type="text" [(ngModel)]="enterCurrentPassword" (ngModelChange)="proveriTrenutnuLozinku()">
+        <output class="error">{{errorCurrentPassword}}</output>
+        <br><br>
+        <p>Unesi novu lozinku:</p>
+        <input type="text" [(ngModel)]="passwordReg" (ngModelChange)="proveriLozinku()">
+        <output class="error">{{errorPassword}}</output>
+        <br><br>
+        <p>Potvrdi novu lozinku:</p>
+        <input type="text" [(ngModel)]="passwordRegConf" (ngModelChange)="proveriLozinkuConf()">
+        <output class="error">{{errorPasswordConf}}</output>
+        <br><br>
+        <button class="btn btn-primary" (click)="promeniLozinku()">Promeni lozinku</button>
+        <br><br>
+        <button class="btn btn-primary" (click)="idiNaPocetnu()">idi na pocetnu</button>
+    </div>
+</body>
+</html>

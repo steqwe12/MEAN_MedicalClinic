@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaša Aplikacija</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}!</h2>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+        <br>
+        <div class="btn-group mt-3">
+            <button class="btn btn-primary" (click)="idiNaProfil()">PROFIL</button>
+            <button class="btn btn-primary" (click)="idiNaLekare()">LEKARI</button>
+            <button class="btn btn-primary" (click)="idiNaPreglede()">PREGLEDI</button>
+        </div>
+        <br><br>
+        <h3>Informacije o lekaru:</h3>
+        <p>Ime: {{lekar.ime}}</p>
+        <p>Prezime: {{lekar.prezime}}</p>
+        <p>Kontakt telefon: {{lekar.kontaktTelefon}}</p>
+        <p>Email: {{lekar.email}}</p>
+        <p>Specijalizacija: {{lekar.specijalizacija}}</p>
+        <p>Ogranak: {{lekar.ogranakOrdinac}}</p>
+        <p>Slika:</p>
+        <img [src]=lekar.slika alt="Prikazana slika" class="img-thumbnail">
+        <br><br>
+        <h3>Obavlja pregled:</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Naziv</th>
+                    <th>Trajanje(min)</th>
+                    <th>Cena(din)</th>
+                    <th>Izaberi pregled</th>
+                </tr>
+                <tr *ngFor="let p of obavljaPreglede">
+                    <td>{{p.naziv}}</td>
+                    <td>{{p.trajanje}}</td>
+                    <td>{{p.cena}}</td>
+                    <td><input type="radio" name="moraisto" [value]="p.naziv" [(ngModel)]="izabpregled"></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <p>Zeljeni datum:</p>
+        <input type="text" [(ngModel)]="zeljeniDatum">
+        <br>
+        <p>Zeljeno vreme:</p>
+        <input type="text" [(ngModel)]="zeljenoVreme">
+        <br>
+        <button class="btn btn-primary" (click)="zakaziPregled()">ZAKAZI</button>
+        <br>
+        <p class="error">{{errorBiranja}}</p>
+        <br>
+        <h3>Zakazani pregledi:</h3>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Lekar</th>
+                    <th>Naziv</th>
+                    <th>Vreme od</th>
+                    <th>Vreme do</th>
+                    <th>Pacijent</th>
+                </tr>
+                <tr *ngFor="let p of zakazaniPregledi">
+                    <td>{{p.lekar}}</td>
+                    <td>{{p.naziv}}</td>
+                    <td>{{p.vremeod}}</td>
+                    <td>{{p.vremedo}}</td>
+                    <td>{{p.pacijent}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

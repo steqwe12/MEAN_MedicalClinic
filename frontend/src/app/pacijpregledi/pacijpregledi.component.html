@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaša Aplikacija</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}!</h2>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+        <br>
+        <div class="btn-group mt-3">
+            <button class="btn btn-primary" (click)="idiNaProfil()">PROFIL</button>
+            <button class="btn btn-primary" (click)="idiNaLekare()">LEKARI</button>
+            <button class="btn btn-primary" (click)="idiNaPreglede()">PREGLEDI</button>
+        </div>
+
+        <br><br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>lekar</th>
+                    <th>pacijent</th>
+                    <th>vremeod</th>
+                    <th>vremedo</th>
+                    <th>specijalizacija</th>
+                    <th>razlogDolaska</th>
+                    <th>dijagnoza</th>
+                    <th>terapija</th>
+                    <th>kontrola</th>
+                </tr>
+                <tr *ngFor="let n of izvestaji">
+                    <td>{{n.lekar}}</td>
+                    <td>{{n.pacijent}}</td>
+                    <td>{{n.vremeod}}</td>
+                    <td>{{n.vremedo}}</td>
+                    <td>{{n.specijalizacija}}</td>
+                    <td>{{n.razlogDolaska}}</td>
+                    <td>{{n.dijagnoza}}</td>
+                    <td>{{n.terapija}}</td>
+                    <td>{{n.kontrola}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <br><br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>naziv</th>
+                    <th>datumod</th>
+                    <th>datumdo</th>
+                    <th>ogranak</th>
+                    <th>lekar</th>
+                    <th>trajanje</th>
+                    <th>cena</th>
+                    <th>OTKAZI PREGLED</th>
+                </tr>
+                <tr *ngFor="let n of pregledi">
+                    <td>{{n.zakazaniPregled.naziv}}</td>
+                    <td>{{n.zakazaniPregled.vremeod}}</td>
+                    <td>{{n.zakazaniPregled.vremedo}}</td>
+                    <td>{{n.ogranak}}</td>
+                    <td>{{n.zakazaniPregled.lekar}}</td>
+                    <td>{{n.zakazaniPregled.trajanje}}</td>
+                    <td>{{n.zakazaniPregled.cena}}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" (click)="otkaziPregled(n.zakazaniPregled.lekar,n.zakazaniPregled.vremeod)">OTKAZI PREGLED</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naslov stranice</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                LOGIN ZA MENADŽERE
+                <br />
+                Korisničko ime: <input type="text" class="form-control" [(ngModel)]="username"> <br />
+                Lozinka: <input type="password" class="form-control" [(ngModel)]="password"> <br />
+                <button class="btn btn-primary" (click)="login()">Login</button>
+                <br />
+                <p class="error">{{error}}</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

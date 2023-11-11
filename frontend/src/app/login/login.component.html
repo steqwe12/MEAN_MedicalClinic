@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordinacija ZdravljaPlus</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .centered-content {
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 centered-content">
+                <button (click)="levo()">LEVA SLIKA</button>
+                <img [src]="trenSlika" alt="slika">
+                <button (click)="desno()">DESNA SLIKA</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Dobrodošli u Multimed Ordinaciju Zdravlja! Naša ekipa iskusnih lekara iz različitih medicinskih oblasti posvećena je vašem celokupnom zdravlju i dobrobiti.
+                    Multimed Ordinacija Zdravlja pruža sveobuhvatnu medicinsku negu u jednom udobnom okruženju. Naš tim stručnjaka uključuje dermatologe, hirurge, interniste i još mnogo toga.
+                    Sa ponosom nudimo širok spektar usluga, od preventivnih pregleda i dijagnostike pa sve do hirurških zahvata i kozmetičkih tretmana, sve prilagođeno vašim potrebama.
+                    Ordinacija ZdravljaPlus<br>
+                    Adresa: Ul. Zdravstvena 123, Gradville<br>
+                    Telefon: +123 456 789<br>
+                    Email: info@zdravljaplus-ordinacija.com
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br /><br />
+                Korisnicko ime: <input type="text" [(ngModel)]="usernameLogin"> <br />
+                Lozinka: <input type="password" [(ngModel)]="passwordLogin"> <br />
+                <button (click)="login()">Login</button>
+                <br />
+                <p class="error">{{errorLogin}}</p>
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br /><br />
+                Forma za registraciju pacijenta:<br />
+                Korisničko ime: <input type="text" [(ngModel)]="usernameReg" (ngModelChange)="proveriKorIme()"><output class="error">{{errorUsername}}</output><br />
+                Lozinka: <input type="text" [(ngModel)]="passwordReg" (ngModelChange)="proveriLozinku()" (ngModelChange)="proveriLozinkuConf()"><output class="error">{{errorPassword}}</output> <br/>
+                Potvrda lozinke: <input type="text" [(ngModel)]="passwordRegConf" (ngModelChange)="proveriLozinkuConf()"><output class="error">{{errorPasswordConf}}</output><br/>
+                Ime: <input type="text" [(ngModel)]="nameReg" (ngModelChange)="proveriIme()"><output class="error">{{errorName}}</output><br/> 
+                Prezime: <input type="text" [(ngModel)]="secnameReg" (ngModelChange)="proveriPrezime()"><output class="error">{{errorSecname}}</output> <br />
+                Adresa: <input type="text" [(ngModel)]="adrReg"> <br />
+                Kontakt telefon: <input type="text" [(ngModel)]="phoneReg" (ngModelChange)="proveriTelefon()"><output class="error">{{errorPhone}}</output>  <br />
+                e-mail adresa: <input type="text" [(ngModel)]="emailReg" (ngModelChange)="proveriEmail()"><output class="error">{{errorEmail}}</output>  <br />
+                <br /><br />
+                <form>
+                    <div>
+                        <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" (change)="selectImage($event)" />
+                    </div>
+                    <br>
+                    {{errorIMAGE}}
+                    <br/>
+                    <button (click)="register()">Registrujte se</button>
+                </form>
+                <br />
+                <p class="error">{{regMessErrButt}}</p>
+                <br /><br /><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                Nasi dragi lekari:
+                <br>Filter:
+                <br>
+                Po imenu:<input type="text" [(ngModel)]="filterIme" (ngModelChange)="filtrLekare()">
+                Po prezimenu:<input type="text" [(ngModel)]="filterPrezime" (ngModelChange)="filtrLekare()">
+                Po specijalizaciji:<input type="text" [(ngModel)]="filterSpec" (ngModelChange)="filtrLekare()">
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Ime <button (click)="sortDesc1()">\/</button><button (click)="sortAsc1()">/\</button></th>
+                            <th>Prezime <button (click)="sortDesc2()">\/</button><button (click)="sortAsc2()">/\</button></th>
+                            <th>Specijalizacija <button (click)="sortDesc3()">\/</button><button (click)="sortAsc3()">/\</button></th>
+                            <th>Slika</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let n of sviLekariMENJANI">
+                            <td>{{n.ime}} </td>
+                            <td>{{n.prezime}} </td>
+                            <td>{{n.specijalizacija}} </td>
+                            <td>  
+                                <img [src]=n.slika alt="Prikazana slika">  
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+  
+

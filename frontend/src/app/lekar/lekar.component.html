@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naslov stranice</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}! <button (click)="logout()">Logout</button> <br />
+                <br />
+                <button (click)="idiNaProfil()">PROFIL</button><button (click)="idiNaPreglede()">PREGLEDI</button><button (click)="idiNaRazno()">RAZNO</button>
+                <br />
+                <br />Podaci:
+                <br />Ime:{{korisnik.ime}}
+                <br />Prezime:{{korisnik.prezime}}
+                <br />Adresa:{{korisnik.adresa}}
+                <br />Email:{{korisnik.email}}
+                <br />Telefon:{{korisnik.kontaktTelefon}}
+                <br />Br. licence:{{korisnik.brLekarskeLic}}
+                <br />Specijalizacija:{{korisnik.specijalizacija}}
+                <br />Ogranak:{{korisnik.ogranakOrdinac}}
+                <br /><br /><br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <tr>
+                        <th>naziv</th>
+                        <th>trajanje</th>
+                        <th>cena</th>
+                        <th>specijalizacija</th>
+                        <th>DODAJ U LISTU PREGLEDA KOJE OBAVLJAS</th>
+                    </tr>
+                    <tr *ngFor="let n of postojePregledi">
+                        <td>{{n.naziv}}</td>
+                        <td>{{n.trajanje}}</td>
+                        <td>{{n.cena}}</td>
+                        <td>{{n.specijalizacija}}</td>
+                        <td>
+                            <button (click)="dodajUObavljaPreglede(n.naziv,n.trajanje,n.cena)">IZABERI</button>
+                        </td>
+                    </tr>
+                </table>
+                <br /><br />
+                <button (click)="promeniLozinku()">Promeni lozinku?</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

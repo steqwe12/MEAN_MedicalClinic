@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}! <button (click)="logout()">Logout</button> <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                <button (click)="idiNaProfil()">PROFIL</button><button (click)="idiNaPreglede()">PREGLEDI</button><button (click)="idiNaRazno()">RAZNO</button>
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+                Prethodni izveštaji:
+                <br />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>lekar</th>
+                            <th>pacijent</th>
+                            <th>vremeod</th>
+                            <th>vremedo</th>
+                            <th>specijalizacija</th>
+                            <th>razlogDolaska</th> 
+                            <th>dijagnoza</th>
+                            <th>terapija</th>
+                            <th>kontrola</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let n of izvestaji">
+                            <td>{{n.lekar}}</td>
+                            <td>{{n.pacijent}}</td>
+                            <td>{{n.vremeod}}</td>
+                            <td>{{n.vremedo}}</td>
+                            <td>{{n.specijalizacija}}</td>
+                            <td>{{n.razlogDolaska}}</td>
+                            <td>{{n.dijagnoza}}</td>
+                            <td>{{n.terapija}}</td>
+                            <td>{{n.kontrola}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br /><br /><br />
+                Unesi izveštaj za pregled:<br />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>lekar</th>
+                            <th>naziv</th>
+                            <th>trajanje</th>
+                            <th>cena</th>
+                            <th>vremeod</th>
+                            <th>vremedo</th> 
+                            <th>pacijent</th>
+                            <th>unesi izveštaj u bazu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let n of listaPregledaZaPisanjeIzvestaja">
+                            <td>{{n.lekar}}</td>
+                            <td>{{n.naziv}}</td>
+                            <td>{{n.trajanje}}</td>
+                            <td>{{n.cena}}</td>
+                            <td>{{n.vremeod}}</td>
+                            <td>{{n.vremedo}}</td>
+                            <td>{{n.pacijent}}</td>
+                            <td>
+                            <button (click)="unesiIzvestaj(n.vremeod,n.vremedo)">unesi izvestaj</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                FORMA ZA IZVEsTAJ (POPUNI PA UNESI IZVEsTAJ)<br />
+
+                <br />razlogDolaska:<input type="text"  [(ngModel)]="razlogDolaska1">
+
+                <br />dijagnoza:<input type="text"  [(ngModel)]="dijagnoza1">
+
+                <br />terapija:<input type="text"  [(ngModel)]="terapija1">
+
+                <br />kontrola:<input type="text"  [(ngModel)]="kontrola1">
+
+                <br /><br /><br /><br />
+                <button (click)="promeniLozinku()">Promeni lozinku?</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

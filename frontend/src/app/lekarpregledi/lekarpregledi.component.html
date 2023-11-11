@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naslov stranice</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}! <button (click)="logout()">Logout</button> <br />
+                <br />
+                <button class="btn btn-primary" (click)="idiNaProfil()">PROFIL</button><button class="btn btn-primary" (click)="idiNaPreglede()">PREGLEDI</button><button class="btn btn-primary" (click)="idiNaRazno()">RAZNO</button>
+                <br />
+                <br>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Naredna 3 pregleda:</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>lekar</th>
+                            <th>naziv</th>
+                            <th>trajanje</th>
+                            <th>cena</th>
+                            <th>vremeod</th>
+                            <th>vremedo</th> 
+                            <th>pacijent</th>
+                            <th>*POGLEDAJ KARTON*</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let n of triZakPreg">
+                            <td>{{n.lekar}}</td>
+                            <td>{{n.naziv}}</td>
+                            <td>{{n.trajanje}}</td>
+                            <td>{{n.cena}}</td>
+                            <td>{{n.vremeod}}</td>
+                            <td>{{n.vremedo}}</td>
+                            <td>{{n.pacijent}}</td>
+                            <td>
+                                <button class="btn btn-success" (click)="pogledajKarton(n.pacijent)">POGLEDAJ KARTON</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+                <button class="btn btn-info" (click)="promeniLozinku()">Promeni lozinku?</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

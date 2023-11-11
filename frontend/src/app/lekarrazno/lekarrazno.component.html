@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naslov stranice</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}! <button (click)="logout()">Logout</button> <br />
+                <br />
+                <button class="btn btn-primary" (click)="idiNaProfil()">PROFIL</button><button class="btn btn-primary" (click)="idiNaPreglede()">PREGLEDI</button><button class="btn btn-primary" (click)="idiNaRazno()">RAZNO</button>
+                <br />
+                <br>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Postavi zahtev za novu vrstu pregleda:</h3>
+                <p>Naziv:<input type="text" class="form-control" [(ngModel)]="naziv"></p>
+                <p>Trajanje:<input type="number" class="form-control" [(ngModel)]="trajanje"></p>
+                <p>Cena:<input type="number" class="form-control" [(ngModel)]="cena"></p>
+                <p>Specijalizacija:<input type="text" class="form-control" [(ngModel)]="specijalizacija"></p>
+                <p><button class="btn btn-success" (click)="proslediZahtev()">POSALJI</button></p>
+                <br><br>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-info" (click)="promeniLozinku()">Promeni lozinku?</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

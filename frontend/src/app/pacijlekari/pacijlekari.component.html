@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaša Aplikacija</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}!</h2>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+        <br>
+        <div class="btn-group mt-3">
+            <button class="btn btn-primary" (click)="idiNaProfil()">PROFIL</button>
+            <button class="btn btn-primary" (click)="idiNaLekare()">LEKARI</button>
+            <button class="btn btn-primary" (click)="idiNaPreglede()">PREGLEDI</button>
+        </div>
+
+        <br><br>
+        <div>
+            Nasi dragi lekari:
+            <br>Filter:
+            <br>
+            Po imenu:<input class="form-control" type="text" [(ngModel)]="filterIme" (ngModelChange)="filtrLekare()">
+            Po prezimenu:<input class="form-control" type="text" [(ngModel)]="filterPrezime" (ngModelChange)="filtrLekare()">
+            Po specijalizaciji:<input class="form-control" type="text" [(ngModel)]="filterSpec" (ngModelChange)="filtrLekare()">
+            Po ogranku ordinacije:<input class="form-control" type="text" [(ngModel)]="filterOgranak" (ngModelChange)="filtrLekare()">
+        </div>
+
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Ime <button class="btn btn-sm btn-secondary" (click)="sortDesc1()">\/</button><button class="btn btn-sm btn-secondary" (click)="sortAsc1()">/\</button></th>
+                    <th>Prezime <button class="btn btn-sm btn-secondary" (click)="sortDesc2()">\/</button><button class="btn btn-sm btn-secondary" (click)="sortAsc2()">/\</button></th>
+                    <th>Specijalizacija <button class="btn btn-sm btn-secondary" (click)="sortDesc3()">\/</button><button class="btn btn-sm btn-secondary" (click)="sortAsc3()">/\</button></th>
+                    <th>Ogranak ordinacije <button class="btn btn-sm btn-secondary" (click)="sortDesc4()">\/</button><button class="btn btn-sm btn-secondary" (click)="sortAsc4()">/\</button></th>
+                    <th>Slika</th>
+                    <th>PRISTUPI PROFILU</th>
+                </tr>
+                <tr *ngFor="let n of sviLekariMENJANI">
+                    <td>{{n.ime}}</td>
+                    <td>{{n.prezime}}</td>
+                    <td>{{n.specijalizacija}}</td>
+                    <td>{{n.ogranakOrdinac}}</td>
+                    <td>
+                        <img class="img-fluid" [src]=n.slika alt="Prikazana slika">
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-sm" (click)="idiNaStranicuLekara(n.korisnickoIme)">idi na profil lekara</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

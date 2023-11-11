@@ -1,0 +1,219 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaša Aplikacija</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}!</h2>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+        <br><br><br>
+        <h3>Forma za ažuriranje:</h3>
+        <p>ime:</p><input type="text" [(ngModel)]="ime"><br>
+        <p>prezime:</p><input type="text" [(ngModel)]="prezime"><br>
+        <p>adresa:</p><input type="text" [(ngModel)]="adresa"><br>
+        <p>telefon:</p><input type="text" [(ngModel)]="telefon"><br>
+        <p>email:</p><input type="text" [(ngModel)]="email"><br>
+        <br><br>
+        <p>br lek lic:</p><input type="text" [(ngModel)]="brleklic"><br>
+        <p>specijalizac:</p><input type="text" [(ngModel)]="spec"><br>
+        <p>ogranak:</p><input type="text" [(ngModel)]="ogranak"><br>
+        <br><br>
+        <h3>Pacijenti:</h3>
+        <table class="table">
+            <tr>
+                <th>korisnicko ime</th>
+                <th>ime</th>
+                <th>prezime</th>
+                <th>adresa</th>
+                <th>telefon</th>
+                <th>email</th>
+                <th>slika</th>
+                <th>obrisi</th>
+                <th>azuriraj</th>
+            </tr>
+            <tr *ngFor="let n of pacijenti">
+                <td>{{n.korisnickoIme}}</td>
+                <td>{{n.ime}}</td>
+                <td>{{n.prezime}}</td>
+                <td>{{n.adresa}}</td>
+                <td>{{n.kontaktTelefon}}</td>
+                <td>{{n.email}}</td>
+                <td>
+                    <img [src]=n.slika alt="Prikazana slika">
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="obrisi1(n.korisnickoIme)">obrisi</button>
+                </td>
+                <td>
+                    <button class="btn btn-warning" (click)="azuriraj1(n.korisnickoIme)">azuriraj</button>
+                </td>
+            </tr>
+        </table>
+        <br><br><br>
+        <h3>Lekari:</h3>
+<div class="table-responsive">
+    <table class="table table-sm">
+        <tr>
+            <th>korisnicko ime</th>
+            <th>ime</th>
+            <th>prezime</th>
+            <th>adresa</th>
+            <th>telefon</th>
+            <th>email</th>
+            <th>br lekarske licence</th>
+            <th>specijalizacija</th>
+            <th class="d-none d-md-table-cell">ogranak</th>
+            <th class="d-none d-md-table-cell">slika</th>
+            <th>obrisi</th>
+            <th>azuriraj</th>
+        </tr>
+        <tr *ngFor="let n of lekari">
+            <td>{{n.korisnickoIme}}</td>
+            <td>{{n.ime}}</td>
+            <td>{{n.prezime}}</td>
+            <td>{{n.adresa}}</td>
+            <td>{{n.kontaktTelefon}}</td>
+            <td>{{n.email}}</td>
+            <td>{{n.brLekarskeLic}}</td>
+            <td>{{n.specijalizacija}}</td>
+            <td class="d-none d-md-table-cell">{{n.ogranakOrdinac}}</td>
+            <td class="d-none d-md-table-cell">
+                <img [src]=n.slika alt="Prikazana slika">
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="obrisi2(n.korisnickoIme)">obrisi</button>
+            </td>
+            <td>
+                <button class="btn btn-warning" (click)="azuriraj2(n.korisnickoIme)">azuriraj</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+    </div>
+
+
+<div class="container">
+        
+        <h3>Dodaj novog lekara:</h3>
+        <p>korisnickoIme:</p><input type="text" [(ngModel)]="novlekarkorisnickoIme"><br>
+        <p>lozinka:</p><input type="text" [(ngModel)]="novlekarlozinka"><br>
+        <p>ime:</p><input type="text" [(ngModel)]="novlekarime"><br>
+        <p>prezime:</p><input type="text" [(ngModel)]="novlekarprezime"><br>
+        <p>adresa:</p><input type="text" [(ngModel)]="novlekaradresa"><br>
+        <p>kontaktTelefon:</p><input type="text" [(ngModel)]="novlekarkontaktTelefon"><br>
+        <p>email:</p><input type="text" [(ngModel)]="novlekaremail"><br>
+        <p>brLekarskeLic:</p><input type="text" [(ngModel)]="novlekarbrLekarskeLic"><br>
+        <p>specijalizacija:</p><input type="text" [(ngModel)]="novlekarspecijalizacija"><br>
+        <p>ogranakOrdinac:</p><input type="text" [(ngModel)]="novlekarogranakOrdinac"><br>
+        <p>slika:</p>
+        <div>
+            <input type="file" name="image" accept="image/jpeg, image/png, image/jpg" (change)="selectImage($event)" />
+        </div>
+        <br>
+        <p>{{errorIMAGE}}</p>
+        <button class="btn btn-primary" (click)="dodLekara()">Dodaj lekara u sistem</button>
+        <br><br><br><br>
+
+        <h3>Zahtevi za registraciju:</h3>
+        <table class="table">
+            <tr>
+                <th>korisnicko ime</th>
+                <th>ime</th>
+                <th>prezime</th>
+                <th>adresa</th>
+                <th>telefon</th>
+                <th>email</th>
+                <th>slika</th>
+                <th>obrisi</th>
+                <th>prihvati</th>
+            </tr>
+            <tr *ngFor="let n of zahteviRegistr">
+                <td>{{n.korisnickoIme}}</td>
+                <td>{{n.ime}}</td>
+                <td>{{n.prezime}}</td>
+                <td>{{n.adresa}}</td>
+                <td>{{n.kontaktTelefon}}</td>
+                <td>{{n.email}}</td>
+                <td>
+                    <img [src]=n.slika alt="Prikazana slika">
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="obrisiRegZahtev(n.korisnickoIme,n.email)">obrisi</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" (click)="odobriRegZahtev(n.korisnickoIme,n.lozinka,n.ime,n.prezime,n.adresa,n.kontaktTelefon,n.email,n.slika)">prihvati</button>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+
+        <h3>Zahtevi za nove vrste pregleda:</h3>
+        <table class="table">
+            <tr>
+                <th>naziv</th>
+                <th>trajanje</th>
+                <th>cena</th>
+                <th>specijalizacija</th>
+                <th>POTVRDI</th>
+                <th>ODBIJ</th>
+            </tr>
+            <tr *ngFor="let n of zahteviZaPostPregl">
+                <td>{{n.naziv}}</td>
+                <td>{{n.trajanje}}</td>
+                <td>{{n.cena}}</td>
+                <td>{{n.specijalizacija}}</td>
+                <td><button class="btn btn-success" (click)="potvrdiZZPP(n.naziv,n.trajanje,n.cena,n.specijalizacija)">POTVRDI</button></td>
+                <td><button class="btn btn-danger" (click)="odbijZZPP(n.naziv,n.trajanje,n.cena,n.specijalizacija)">ODBIJ</button></td>
+            </tr>
+        </table>
+    </div>
+
+<br>
+<div class="container">
+    <h2>Dodaj novi pregled:</h2>
+    <p>naziv:</p><input type="text" [(ngModel)]="novpregnaziv"><br>
+    <p>trajanje:</p><input type="number" [(ngModel)]="novpregtraj"><br>
+    <p>cena:</p><input type="number" [(ngModel)]="novpregcena"><br>
+    <p>specijalizacija:</p><input type="text" [(ngModel)]="novpregspec"><br>
+    <button class="btn btn-primary" (click)="dodNovPreg()">Dodaj</button>
+    <br><br>
+    
+    <h2>Vrste pregleda:</h2>
+    <p>naziv:</p><input type="text" [(ngModel)]="procitNaziv">
+    <p>cena:</p><input type="number" [(ngModel)]="procitCena"><br>
+    <table class="table">
+        <tr>
+            <th>naziv</th>
+            <th>trajanje</th>
+            <th>cena</th>
+            <th>specijalizacija</th>
+            <th>update naziv</th>
+            <th>update cena</th> 
+            <th>obrisi</th>        
+        </tr>
+        <tr *ngFor="let n of sviPostojePregledi">
+            <td>{{n.naziv}}</td>
+            <td>{{n.trajanje}}</td>
+            <td>{{n.cena}}</td>
+            <td>{{n.specijalizacija}}</td> 
+            <td>
+                <button class="btn btn-warning" (click)="updtNaz(n.naziv,n.trajanje,n.cena,n.specijalizacija)">update naziv</button>
+            </td>
+            <td>
+                <button class="btn btn-warning" (click)="updtCena(n.naziv,n.trajanje,n.cena,n.specijalizacija)">update cena</button>
+            </td> 
+            <td>
+                <button class="btn btn-danger" (click)="dlt(n.naziv,n.trajanje,n.cena,n.specijalizacija)">obrisi</button>
+            </td>       
+        </tr>
+    </table>
+    <br><br><br><br>
+    
+    <button class="btn btn-secondary" (click)="promeniLozinku()">Promeni lozinku?</button>
+</div>
+</body>
+</html>

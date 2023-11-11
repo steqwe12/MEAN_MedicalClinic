@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaša Aplikacija</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dobrodošli, {{korisnik.ime}} {{korisnik.prezime}}!</h2>
+        <button class="btn btn-secondary" (click)="logout()">Logout</button>
+        <br>
+        <div class="btn-group mt-3">
+            <button class="btn btn-primary" (click)="idiNaProfil()">PROFIL</button>
+            <button class="btn btn-primary" (click)="idiNaLekare()">LEKARI</button>
+            <button class="btn btn-primary" (click)="idiNaPreglede()">PREGLEDI</button>
+        </div>
+
+        <br><br>
+        <div>
+            <strong>Ime:</strong> {{korisnik.ime}} <br>
+            <strong>Prezime:</strong> {{korisnik.prezime}} <br>
+            <strong>Adresa:</strong> {{korisnik.adresa}} <br>
+            <strong>Email:</strong> {{korisnik.email}} <br>
+            <strong>Kontakt telefon:</strong> {{korisnik.kontaktTelefon}} <br>
+        </div>
+
+        <br><br><br>
+        <button class="btn btn-primary" (click)="promeniLozinku()">Promeni lozinku?</button>
+    </div>
+</body>
+</html>
