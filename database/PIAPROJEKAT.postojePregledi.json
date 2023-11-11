@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "64ee364c39180d935d2fd29b"
+  },
+  "naziv": "pregled_ruke",
+  "trajanje": 20,
+  "cena": 363636,
+  "specijalizacija": "oftamologija"
+},
+{
+  "_id": {
+    "$oid": "64ee366939180d935d2fd29d"
+  },
+  "naziv": "pregled ledja",
+  "trajanje": 40,
+  "cena": 3700,
+  "specijalizacija": "hirurgija"
+},
+{
+  "_id": {
+    "$oid": "64ee459d39180d935d2fd2c8"
+  },
+  "naziv": "pregled123",
+  "trajanje": 20,
+  "cena": 1500,
+  "specijalizacija": "oftamologija"
+},
+{
+  "_id": {
+    "$oid": "64eecb5edc28d117b81ba610"
+  },
+  "naziv": "pregled_svega",
+  "trajanje": 33,
+  "cena": 2222,
+  "specijalizacija": "hirurgija",
+  "__v": 0
+}]

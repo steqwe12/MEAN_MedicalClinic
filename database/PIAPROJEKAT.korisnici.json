@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "64eb36b739180d935d2fd224"
+  },
+  "korisnickoIme": "stefan",
+  "lozinka": "stefan123",
+  "ime": "Stefan",
+  "prezime": "Kamenkovic",
+  "adresa": "Gavrila Principa 3, Zemun",
+  "kontaktTelefon": "+381 64 510 4606",
+  "email": "stefan.kamenkovic@gmail.com",
+  "brLekarskeLic": "MED-ABCDE-12345",
+  "specijalizacija": "oftamologija",
+  "ogranakOrdinac": "Ogranak za Dermatologiju",
+  "tip": "lekar",
+  "slika": "http://localhost:4000/uploads/slika_31742.jpg"
+},
+{
+  "_id": {
+    "$oid": "64eb36b739180d935d2fd225"
+  },
+  "korisnickoIme": "filip",
+  "lozinka": "filip123F!",
+  "ime": "Filip",
+  "prezime": "Kamenkovic",
+  "adresa": "Gavrila Principa 33, Zemun",
+  "kontaktTelefon": "132124123",
+  "email": "filip.kamenkovic@gmail.com",
+  "brLekarskeLic": null,
+  "specijalizacija": null,
+  "ogranakOrdinac": null,
+  "tip": "pacijent",
+  "slika": "http://localhost:4000/uploads/slika_31742.jpg"
+},
+{
+  "_id": {
+    "$oid": "64eb440d39180d935d2fd227"
+  },
+  "korisnickoIme": "admin",
+  "lozinka": "admin123",
+  "ime": "Admin",
+  "prezime": "Adminovic",
+  "adresa": "Gavrila Principa 23, Zemun",
+  "kontaktTelefon": "063 444 555",
+  "email": "mama.kamenkovic@gmail.com",
+  "brLekarskeLic": null,
+  "specijalizacija": null,
+  "ogranakOrdinac": null,
+  "tip": "menadzer",
+  "slika": "http://localhost:4000/uploads/Frog.jpg"
+},
+{
+  "_id": {
+    "$oid": "64eb36b733180d935d2fd224"
+  },
+  "korisnickoIme": "awegstefan",
+  "lozinka": "stefan123",
+  "ime": "qqqqqqqqqqqqqqqqqq1",
+  "prezime": "Pavlic",
+  "adresa": "Gavrila Principa 3, Zemun",
+  "kontaktTelefon": "55555312",
+  "email": "stefan.sasovic@gmail.com",
+  "brLekarskeLic": "MED-dDE-12345",
+  "specijalizacija": "hirurgija",
+  "ogranakOrdinac": "ogranak za hirurgiju",
+  "tip": "lekar",
+  "slika": "http://localhost:4000/uploads/slika_31742.jpg"
+},
+{
+  "_id": {
+    "$oid": "64eeb1fdf6c31383161f942a"
+  },
+  "korisnickoIme": "darko",
+  "lozinka": "darko123",
+  "ime": "Darko",
+  "prezime": "Darkovic",
+  "adresa": "Boraca Darka 21, Karaburma",
+  "kontaktTelefon": "063777333",
+  "email": "darko.darkovic1@hotmail.com",
+  "brLekarskeLic": null,
+  "specijalizacija": null,
+  "ogranakOrdinac": null,
+  "tip": "pacijent",
+  "slika": "http://localhost:4000/uploads/slika_31742.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64eef0f3dc5fa9796b47fee9"
+  },
+  "korisnickoIme": "lekar",
+  "lozinka": "lekar123",
+  "ime": "Lekar",
+  "prezime": "Lekarevic",
+  "adresa": "lekareviceva, 34",
+  "kontaktTelefon": "+389123872",
+  "email": "leklekar@gmail.com",
+  "brLekarskeLic": "3123-412-A",
+  "specijalizacija": "hirurgija",
+  "ogranakOrdinac": "pregledi",
+  "tip": "lekar",
+  "slika": "http://localhost:4000/uploads/slika_13428.jpg",
+  "__v": 0
+}]

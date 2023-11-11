@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "64ed5f2f39180d935d2fd258"
+  },
+  "lekar": "stefan",
+  "naziv": "pregled123",
+  "trajanje": 30,
+  "cena": 4000,
+  "vremeod": "2023-09-24T12:30",
+  "vremedo": "2023-09-24T13:00",
+  "pacijent": "filip"
+},
+{
+  "_id": {
+    "$oid": "64edfad53df9d1bba8728957"
+  },
+  "lekar": "stefan",
+  "naziv": "dermatoloski",
+  "trajanje": 30,
+  "cena": 4000,
+  "vremeod": "2023-05-03T09:05",
+  "vremedo": "2023-05-03T09:35",
+  "pacijent": "filip",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64edfafd3df9d1bba872895e"
+  },
+  "lekar": "stefan",
+  "naziv": "dermatoloski",
+  "trajanje": 30,
+  "cena": 4000,
+  "vremeod": "2023-05-03T09:36",
+  "vremedo": "2023-05-03T10:06",
+  "pacijent": "filip",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ef0f7ec291bdc34ed735e0"
+  },
+  "lekar": "stefan",
+  "naziv": "pregled_123",
+  "trajanje": 30,
+  "cena": 4000,
+  "vremeod": "2023-12-03T09:36",
+  "vremedo": "2023-12-03T10:06",
+  "pacijent": "filip",
+  "__v": 0
+}]

@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "64ed544a39180d935d2fd24c"
+  },
+  "korisnickoIme": "stefan",
+  "naziv": "pregled123",
+  "trajanje": 30,
+  "cena": 4000
+},
+{
+  "_id": {
+    "$oid": "64edcf3739180d935d2fd25c"
+  },
+  "korisnickoIme": "stefan",
+  "naziv": "ooooogasdqw",
+  "trajanje": 30,
+  "cena": 3333
+},
+{
+  "_id": {
+    "$oid": "64edcf5b39180d935d2fd25e"
+  },
+  "korisnickoIme": "stefan",
+  "naziv": "dermatoloski",
+  "trajanje": 30,
+  "cena": 4000
+},
+{
+  "_id": {
+    "$oid": "64ee48af80bef9bf2e9652a4"
+  },
+  "korisnickoIme": "stefan",
+  "naziv": "pregled_ruke",
+  "trajanje": 20,
+  "cena": 2200,
+  "__v": 0
+}]

@@ -1,0 +1,111 @@
+[{
+  "_id": {
+    "$oid": "64ebb45639180d935d2fd22c"
+  },
+  "korisnickoIme": "darko",
+  "lozinka": "darko123",
+  "ime": "Darko",
+  "prezime": "Darkovic",
+  "adresa": "Boraca Darka 21, Karaburma",
+  "kontaktTelefon": "063777333",
+  "email": "darko.darkovic1@hotmail.com",
+  "slika": "http://localhost:4000/uploads/Frog.jpg"
+},
+{
+  "_id": {
+    "$oid": "64ed00991b04cb7e51a32a2c"
+  },
+  "korisnickoIme": "mar123",
+  "lozinka": "Asd123!ew",
+  "ime": "Marko",
+  "prezime": "Markovic",
+  "adresa": "asdweq 3, 21",
+  "kontaktTelefon": "+983716252",
+  "email": "ste.kei@ewp.com",
+  "slika": "http://localhost:4000/uploads/Frog.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ed00b01b04cb7e51a32a2e"
+  },
+  "korisnickoIme": "neznam3321",
+  "lozinka": "Asd123!ew",
+  "ime": "Tajna",
+  "prezime": "Tajnic",
+  "adresa": "asdweq 3, lmao",
+  "kontaktTelefon": "+983716252",
+  "email": "ste.kei@ewp.com",
+  "slika": "http://localhost:4000/uploads/slika_80471.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ed01371b04cb7e51a32a30"
+  },
+  "korisnickoIme": "dassa",
+  "lozinka": "eqwe#e@Eqw3",
+  "ime": "daweq",
+  "prezime": "qweqwe",
+  "adresa": "eqwewq",
+  "kontaktTelefon": "312312312",
+  "email": "ewqwq.qwe@gasd.co",
+  "slika": "http://localhost:4000/uploads/slika_21747.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ed01d31b04cb7e51a32a32"
+  },
+  "korisnickoIme": "dsaew",
+  "lozinka": "ewq@3Eqw",
+  "ime": "adsda",
+  "prezime": "sdadas",
+  "adresa": "asdsda",
+  "kontaktTelefon": "127839172398",
+  "email": "qeeqwe@wqe.com",
+  "slika": "http://localhost:4000/uploads/slika_15826.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ed03c11b04cb7e51a32a34"
+  },
+  "korisnickoIme": "eqwweq",
+  "lozinka": "eqwe@3Eqwascx",
+  "ime": "adsda",
+  "prezime": "dfasd",
+  "adresa": "asdas",
+  "kontaktTelefon": "123123123",
+  "email": "qeweqwe@gmai.com",
+  "slika": "http://localhost:4000/uploads/slika_31742.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64eeef28dc5fa9796b47fec4"
+  },
+  "korisnickoIme": "zika",
+  "lozinka": "zika123@Z",
+  "ime": "Zika",
+  "prezime": "Zikic",
+  "adresa": "adresa neka",
+  "kontaktTelefon": "+391828736",
+  "email": "zika13@hotmail.com",
+  "slika": "http://localhost:4000/uploads/slika_37026.jpg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64eeefdbdc5fa9796b47fede"
+  },
+  "korisnickoIme": "bane",
+  "lozinka": "bane!@E3",
+  "ime": "Bane",
+  "prezime": "Banovic",
+  "adresa": "jos neka adresa, 3",
+  "kontaktTelefon": "038726372",
+  "email": "banebane@gmail.com",
+  "slika": "http://localhost:4000/uploads/slika_74185.jpg",
+  "__v": 0
+}]

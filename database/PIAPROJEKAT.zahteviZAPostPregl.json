@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "64ee7afb39180d935d2fd2fb"
+  },
+  "naziv": "pregled_ociju",
+  "trajanje": 45,
+  "cena": 1300,
+  "specijalizacija": "oftamologija"
+},
+{
+  "_id": {
+    "$oid": "64ee7b1f39180d935d2fd2fc"
+  },
+  "naziv": "pregled_srca",
+  "trajanje": 60,
+  "cena": 5850,
+  "specijalizacija": "kardiologija"
+},
+{
+  "_id": {
+    "$oid": "64ee7df7b8d9abba96455bcd"
+  },
+  "naziv": "pregled123",
+  "trajanje": 32,
+  "cena": 12000,
+  "specijalizacija": "hirurgija",
+  "__v": 0
+}]
