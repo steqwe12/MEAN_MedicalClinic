@@ -1,1 +1,1 @@
-MEAN fullstack app - Doctor's office 
+MEAN fullstack app - Medical Clinic
